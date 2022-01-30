@@ -1,0 +1,61 @@
+server:
+  port: 8081
+
+spring:
+  mail:
+    host: smtp.163.com
+    username: a1475565665@163.com
+    password: EAERYEPCKFZVEYSA
+
+  http:
+    multipart:
+      location: /data/upload_tmp
+
+
+  datasource:
+    drver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://120.76.99.202:3306/xiaoshou?characterEncoding=utf8&rewriteBatchedStatements=true&serverTimezone=GMT
+    username: root
+    password: 123456
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    filters: stat,wall,log4j
+    connectionProperties:
+      druid.stat.mergeSql: true
+      druid.stat.slowSqlMillis: 5000
+  redis:
+    host: 120.76.99.202
+    port: 6379
+    database: 6
+
+mybatis:
+  mapper-locations: classpath:/mapper/*.xml
+  type-aliases-package: com.cpt.entity
+
+
+
+#alipay:
+#  appId: 2021000118627178
+#  privateKey: MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDJdFHMtsRotOYbstPP9KjX4nyS9MFj9RHdIgUyZLXupU/7kN9DyYo+Q6VnXvBNcc68ip6kSkIHpRwoDKizn0HEAwX4gT9Y7vto5jmKCT0qZwpX9msX/ljJ/UkvIN/PgCTe3+7GhCWWqOD3l4op/W1swOAAqPpjBzFg25gGg+0EUwn/D6DS43yQASSCH7cXDr16X12L5I7hf6xRuY97Yqqmc0M7urw+02wxNkGbtvMadMKFXbYAc7gpf/6qaUYyO0S4k1w5sjBq+ygSfc2SMUHJh77HNgsDJ1It4xGa1uobqQNYzcwrhgwxyjnoVlpFR2eVAYrkv9D0zF3LyYJzf981AgMBAAECggEBALjt151l9Zzs2wN4QKp4vHoZRiQdHF5m/PQTI9Qj0UL2bBrR3bI7k3Ue4fqnk050d8RqN8E3DbA46ET3gfIJ8vQ9lkCOXRmFoDKmjRFi88w19K/U3HCVIuqhYYoq0mmIB9C0nluLuXm5I3MFoGZ1Zvrbf4X7mIZJdxGj48WvW2eINVXanBMr0nZ6r7B2wlLPT7Ft8216YmXes53KOIB3FQCDLl6Rg+VroTUbKKqe/2z5n/MK3CaW8i1Xl6Opt4EJdiuezY+dvUiz9g3EjBKrnXmxano7uzT9vxSbdjBLWuh9E87HvYkFoNA+kId8FP6ByFmaL4frYJvASGbz72WiEy0CgYEA8JNRmBf0Miee3XX2hLtDz7jq8YR9NF58B0TQ+Jm1Rl4ZxMPo/xS6OL4A5mtqbl9m0Un2fKFS7GdX3BmF3fIDwaxrXkHszhLyinWbhjeK/k9CnqRVVa4jtO9PL0xoAHKwxVuuKl7GhJqe18eG4rX15sBxZpQEuWd8bxmY3/9wD1sCgYEA1l7jL93d0w0On3VKB/ch0IPEmIHYVLgj/bXvrFIh7aBx+Zco4VNpEKfvA39Yh+WOQEquLOBTVzxY4zIa+uVxq/hIyVdm9wHy7X5WUNaPMxOapqrbi3qIaE/Y8GWEAmesR8sgVkmD/sN3CdCFEPRsjNqg9lhv/j3BrtywoYcOIK8CgYEAvxMC913vIfa+Av8yMPHbRhyE3hZwqytwLwXFQ+4xQBZ1OQaxBAgeb/rZFCm0er1jGE86anpnNkROUA4leMZDnYuoK1EJGBOMd9Q5Fjz/NEUXkJDNBiQtUAPSTKrO36w4IkhS6GwmGCQGjTN4OpBzIjcu2l4t8mPzPPqDpUVoZ4kCgYEArltO/Ue/fEFKe3eyVvgykJ4b8M7rXTzISTsJTWcgIV42VYMUxPBKrDlqtbWGFEIpiTE0qVtrbbCvu1qthxPHeM/go6JrJMx5AaGYIvfgUPLI/nZJSxDGkdEf6acnz6zy+xHDo2r36Oaik2D+WePzxjysXrFfpbIlLkxhfX+ThhECgYAGz6REjqpl19TPQxVN+XaQwemEXtvY6BBdRVDO4Y5kKPU/VTMjblHe9TlbheD+VJZJTp5br5gFZMKYau/repoaAdCuXW4Mgl7zcvRWpNgWfcx3WGxv35ZTpuuofsqh13zqx8sfP4McpMAWgFmzWbOSLxCvWTRPS9SZqb20be8E4A==
+#  publicKey:  MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAyXRRzLbEaLTmG7LTz/So1+J8kvTBY/UR3SIFMmS17qVP+5DfQ8mKPkOlZ17wTXHOvIqepEpCB6UcKAyos59BxAMF+IE/WO77aOY5igk9KmcKV/ZrF/5Yyf1JLyDfz4Ak3t/uxoQllqjg95eKKf1tbMDgAKj6YwcxYNuYBoPtBFMJ/w+g0uN8kAEkgh+3Fw69el9di+SO4X+sUbmPe2KqpnNDO7q8PtNsMTZBm7bzGnTChV22AHO4KX/+qmlGMjtEuJNcObIwavsoEn3NkjFByYe+xzYLAydSLeMRmtbqG6kDWM3MK4YMMco56FZaRUdnlQGK5L/Q9Mxdy8mCc3/fNQIDAQAB
+#  #支付网关配置，这一项是写死的，正式环境是openapi.alipay.com
+#  gateway: openapi.alipaydev.com
+#  #支付成功之后的回调页面，只是一个友好页面。主要换成你自己映射的临时域名
+#  returnUrl: http://frnqxw.natappfree.cc/return.html
+#  #支付成功的接口回调，我们还没写，先空着
+#  notifyUrl:
+
+
+chensensong:
+  jwt:
+    header: Authorization
+    expire: 60480000
+    secret: zxcvbnmasdfghjklqwertyuiopasdfgh
+
+
+jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
