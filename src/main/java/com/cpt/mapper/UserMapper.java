@@ -2,10 +2,7 @@ package com.cpt.mapper;
 
 import com.cpt.entity.User;
 import com.cpt.from.UserFrom;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -28,4 +25,7 @@ public interface UserMapper {
 
    @Insert("insert into t_user(username)values(#{username})")
     void insert(String s);
+
+   @Delete("delete * from t_user t where t.id=#{id}")
+    void delete(Integer id);
 }

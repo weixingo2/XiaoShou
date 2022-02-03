@@ -23,4 +23,6 @@ public interface UserService {
 
 
     void insert(String s);
+
+    void delete(Integer id);
 }
