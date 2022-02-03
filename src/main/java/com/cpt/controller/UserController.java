@@ -88,5 +88,5 @@ public class UserController {
 
         return Result.success(200,"success",list);
     }
-    
+
 }
