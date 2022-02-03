@@ -89,4 +89,16 @@ public class UserController {
         return Result.success(200,"success",list);
     }
 
+
+    @GetMapping("/delete/{id}")
+    public Result deleteUser(@PathVariable("/id")Integer id){
+           userService.delete(id);
+        return Result.success(200,"success",null);
+    }
+
+    @GetMapping("/update")
+    public Result updateUser(){
+        return Result.success(200,"success",null);
+    }
+
 }

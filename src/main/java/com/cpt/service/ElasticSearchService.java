@@ -95,7 +95,6 @@ public class ElasticSearchService {
                 return list;
     }
 
-
     public Map<String,Object> searchPage1() throws IOException {
         SearchRequest searchRequest=new SearchRequest();
         searchRequest.types("page_user");
@@ -106,19 +105,12 @@ public class ElasticSearchService {
         searchSourceBuilder.query(queryBuilder);
         searchRequest.source(searchSourceBuilder);
        SearchResponse searchResponse=restHighLevelClient.search(searchRequest,RequestOptions.DEFAULT);
-
        SearchHits searchHits=searchResponse.getHits();
-
        System.out.println("记录:"+searchHits.getTotalHits());
-
        SearchHit[] hits=searchHits.getHits();
-
         Map<String,Object> map=new HashMap<>();
-
        for(SearchHit documentFields:hits){
-
             map=documentFields.getSourceAsMap();
-
            System.out.println(map);
        }
 
