@@ -35,4 +35,10 @@ public class UserServiceImpl implements UserService {
         return new PageInfo<>(userMapper.pageUserList(from.getUsername()));
     }
 
+    @Override
+    public void insert(String s) {
+
+        userMapper.insert(s);
+    }
+
 }

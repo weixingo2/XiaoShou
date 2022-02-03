@@ -26,5 +26,6 @@ public interface UserMapper {
 
      List<User> pageUserList(@Param("username") String username);
 
-
+   @Insert("insert into t_user(username)values(#{username})")
+    void insert(String s);
 }

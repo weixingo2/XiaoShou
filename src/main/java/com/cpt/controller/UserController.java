@@ -30,7 +30,6 @@ public class UserController {
     @GetMapping("/findUser")
     public Result getUserList(@RequestParam("username") String username, @RequestParam("password") String password) {
 
-
         //查找用户
         User user = userService.findUsername(username);
 
@@ -38,14 +37,18 @@ public class UserController {
 
             return Result.success(200, "success", user);
         } else {
-
             return Result.fail(-1, "fail");
-
         }
     }
 
+    @GetMapping("/get")
+    public void testInsert(){
 
-
+        for(int i=0;i<2100000;i++)
+        {
+            userService.insert("admin"+i);
+        }
+    }
 
     @PostMapping("/getUserAll")
     public Result getUserAllList() {

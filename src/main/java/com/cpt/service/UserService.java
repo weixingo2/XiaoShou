@@ -22,5 +22,5 @@ public interface UserService {
     PageInfo<User> pageUserList(UserFrom from);
 
 
-
+    void insert(String s);
 }
