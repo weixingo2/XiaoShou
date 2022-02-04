@@ -97,6 +97,7 @@ public class UserController {
 
     @GetMapping("/update")
     public Result updateUser(){
+        System.out.println("aaaa");
         return Result.success(200,"success",null);
     }
 
