@@ -26,6 +26,6 @@ public interface UserMapper {
    @Insert("insert into t_user(username)values(#{username})")
     void insert(String s);
 
-   @Delete("delete * from t_user t where t.id=#{id}")
+   @Delete("delete t.* from t_user t where t.id=#{id}")
     void delete(Integer id);
 }
